@@ -1,27 +1,20 @@
 import React from 'react'
-import ReactDOM from 'react-dom/client'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import { Root } from './routes/Root'
-import { ThemeProvider } from '@mui/material/styles'
-import CssBaseline from '@mui/material/CssBaseline'
-import { theme } from './theme'
+import { createRoot } from 'react-dom/client'
+import { RouterProvider } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import { store } from './store'
+import { PersistGate } from 'redux-persist/integration/react'
+import { persistStore } from 'redux-persist'
+import { router } from './routes/paths'
 
-const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <Root />
-  }
-])
+const root = createRoot(document.getElementById('root') as HTMLElement)
 
-ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
+root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
+      <PersistGate persistor={persistStore(store)} loading={null}>
         <RouterProvider router={router} />
-      </ThemeProvider>
+      </PersistGate>
     </Provider>
   </React.StrictMode>
 )
