@@ -1,4 +1,4 @@
-export const themeSettings = (mode: 'light' | 'dark') => {
+export const themeOptions = (mode: 'light' | 'dark') => {
   return {
     palette: {
       mode: mode,
@@ -61,12 +61,20 @@ export const themeSettings = (mode: 'light' | 'dark') => {
               A400: '#bdbdbd',
               A700: '#616161'
             },
+            text:{
+              primary: '#f1f1f1',
+              secondary: 'rgba(255, 255, 255, 0.7)',
+              disabled: 'rgba(255, 255, 255, 0.5)',
+              icon: '#22194D'
+            },
+            divider: 'rgba(255, 255, 255, 0.12)',
             background: {
               paper: '#121212',
               default: '#121212'
             }
           }
         : {
+            // palette values for light mode
             common: {
               black: '#000',
               white: '#fff'
@@ -123,15 +131,21 @@ export const themeSettings = (mode: 'light' | 'dark') => {
               A400: '#bdbdbd',
               A700: '#616161'
             },
+            text:{
+              primary: 'rgba(0, 0, 0, 0.87)',
+              secondary: 'rgba(0, 0, 0, 0.6)',
+              disabled: 'rgba(0, 0, 0, 0.38)'
+            },
+            divider: 'rgba(0, 0, 0, 0.12)',
             background: {
-              paper: '#fff',
-              default: '#fff'
+              paper: '#f1f1f1',
+              default: '#f1f1f1'
             }
           })
     },
     typography: {
       fontFamily: ['Rubik', 'sans-serif'].join(','),
-      fontSize: 12,
+      fontSize: 16,
       h1: {
         fontFamily: ['Rubik', 'sans-serif'].join(','),
         fontSize: 40
