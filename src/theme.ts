@@ -1,3 +1,13 @@
+import JostThinTTF from '../public/fonts/Jost/static/Jost-Thin.ttf'
+import JostExtraLightTTF from '../public/fonts/Jost/static/Jost-ExtraLight.ttf'
+import JostLightTTF from '../public/fonts/Jost/static/Jost-Light.ttf'
+import JostRegularTTF from '../public/fonts/Jost/static/Jost-Regular.ttf'
+import JostMediumTTF from '../public/fonts/Jost/static/Jost-Medium.ttf'
+import JostSemiBoldTTF from '../public/fonts/Jost/static/Jost-SemiBold.ttf'
+import JostBoldTTF from '../public/fonts/Jost/static/Jost-Bold.ttf'
+import JostExtraBoldTTF from '../public/fonts/Jost/static/Jost-ExtraBold.ttf'
+import JostBlackTTF from '../public/fonts/Jost/static/Jost-Black.ttf'
+
 export const themeOptions = (mode: 'light' | 'dark') => {
   return {
     palette: {
@@ -62,15 +72,15 @@ export const themeOptions = (mode: 'light' | 'dark') => {
               A700: '#616161'
             },
             text:{
-              primary: '#f1f1f1',
+              primary: '#ebebf5',
               secondary: 'rgba(255, 255, 255, 0.7)',
               disabled: 'rgba(255, 255, 255, 0.5)',
               icon: '#22194D'
             },
             divider: 'rgba(255, 255, 255, 0.12)',
             background: {
-              paper: '#121212',
-              default: '#121212'
+              paper: '#1a1a1aff',
+              default: '#1a1a1aff'
             }
           }
         : {
@@ -132,43 +142,112 @@ export const themeOptions = (mode: 'light' | 'dark') => {
               A700: '#616161'
             },
             text:{
-              primary: 'rgba(0, 0, 0, 0.87)',
+              primary: '#3c3c43',
               secondary: 'rgba(0, 0, 0, 0.6)',
               disabled: 'rgba(0, 0, 0, 0.38)'
             },
             divider: 'rgba(0, 0, 0, 0.12)',
             background: {
-              paper: '#f1f1f1',
-              default: '#f1f1f1'
+              paper: '#fff',
+              default: '#fff'
             }
           })
     },
     typography: {
-      fontFamily: ['Rubik', 'sans-serif'].join(','),
+      fontFamily: ['Jost', 'sans-serif'].join(','),
       fontSize: 16,
       h1: {
-        fontFamily: ['Rubik', 'sans-serif'].join(','),
+        fontFamily: ['Jost', 'sans-serif'].join(','),
         fontSize: 40
       },
       h2: {
-        fontFamily: ['Rubik', 'sans-serif'].join(','),
+        fontFamily: ['Jost', 'sans-serif'].join(','),
         fontSize: 32
       },
       h3: {
-        fontFamily: ['Rubik', 'sans-serif'].join(','),
+        fontFamily: ['Jost', 'sans-serif'].join(','),
         fontSize: 24
       },
       h4: {
-        fontFamily: ['Rubik', 'sans-serif'].join(','),
+        fontFamily: ['Jost', 'sans-serif'].join(','),
         fontSize: 20
       },
       h5: {
-        fontFamily: ['Rubik', 'sans-serif'].join(','),
+        fontFamily: ['Jost', 'sans-serif'].join(','),
         fontSize: 16
       },
       h6: {
-        fontFamily: ['Rubik', 'sans-serif'].join(','),
+        fontFamily: ['Jost', 'sans-serif'].join(','),
         fontSize: 14
+      }
+    },
+    components: {
+      MuiCssBaseline: {
+        styleOverrides: `
+          @font-face {
+            font-family: 'Jost';
+            font-style: normal;
+            font-display: swap;
+            font-weight: 100;
+            src: local('Jost'), local('Jost-Thin'), url('/fonts/Jost/static/Jost-Thin.ttf') format('truetype');
+          }
+          @font-face {
+            font-family: 'Jost';
+            font-style: normal;
+            font-display: swap;
+            font-weight: 200;
+            src: local('Jost'), local('Jost-ExtraLight'), url('/fonts/Jost/static/Jost-ExtraLight.ttf') format('truetype');
+          }
+          @font-face {
+            font-family: 'Jost';
+            font-style: normal;
+            font-display: swap;
+            font-weight: 300;
+            src: local('Jost'), local('Jost-Light'), url('/fonts/Jost/static/Jost-Light.ttf') format('truetype');
+          }
+          @font-face {
+            font-family: 'Jost';
+            font-style: normal;
+            font-display: swap;
+            font-weight: 400;
+            src: local('Jost'), local('Jost-Regular'), url('/fonts/Jost/static/Jost-Regular.ttf') format('truetype');
+          }
+          @font-face {
+            font-family: 'Jost';
+            font-style: normal;
+            font-display: swap;
+            font-weight: 500;
+            src: local('Jost'), local('Jost-Medium'), url('/fonts/Jost/static/Jost-Medium.ttf') format('truetype');
+          }
+          @font-face {
+            font-family: 'Jost';
+            font-style: normal;
+            font-display: swap;
+            font-weight: 600;
+            src: local('Jost'), local('Jost-SemiBold'), url('/fonts/Jost/static/Jost-SemiBold.ttf') format('truetype');
+          }
+          @font-face {
+            font-family: 'Jost';
+            font-style: normal;
+            font-display: swap;
+            font-weight: 700;
+            src: local('Jost'), local('Jost-Bold'), url('/fonts/Jost/static/Jost-Bold.ttf') format('truetype');
+          }
+          @font-face {
+            font-family: 'Jost';
+            font-style: normal;
+            font-display: swap;
+            font-weight: 800;
+            src: local('Jost'), local('Jost-ExtraBold'), url('/fonts/Jost/static/Jost-ExtraBold.ttf') format('truetype');
+          }
+          @font-face {
+            font-family: 'Jost';
+            font-style: normal;
+            font-display: swap;
+            font-weight: 900;
+            src: local('Jost'), local('Jost-Black'), url('/fonts/Jost/static/Jost-Black.ttf') format('truetype');
+          }
+        `
       }
     }
   }
